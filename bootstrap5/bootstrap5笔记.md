@@ -248,7 +248,7 @@ justify-content-end
 
 文字在图像中, 并文字居中
 
-![image-20220104020400722](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220104020400722.png)
+![image-20220104020400722](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220104020400722.png)
 
 align-content-center	垂直居中,也就是y轴居中
 
@@ -352,7 +352,7 @@ offset-md-4的意思是,当分辨率达到md时,这个栏向右移动4栏的间�
 
  @media screen and (min-width: 768px) 的意思是,当屏幕大于768px时,应用某个样式
 
-![image-20220104030607277](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220104030607277.png)
+![image-20220104030607277](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220104030607277.png)
 
 ```html
 <!DOCTYPE html>
@@ -476,7 +476,7 @@ padding不可以使用负值，margin需要手动启动
 
 [文档](https://getbootstrap.com/docs/5.1/utilities/spacing/)
 
-![image-20220104224021582](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220104224021582.png)
+![image-20220104224021582](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220104224021582.png)
 
 ```html
 <!DOCTYPE html>
@@ -594,11 +594,11 @@ padding不可以使用负值，margin需要手动启动
 
 ### [Colors](https://getbootstrap.com/docs/5.1/utilities/colors/)
 
-![image-20220105200227311](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105200227311.png)
+![image-20220105200227311](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105200227311.png)
 
 ### [background](https://getbootstrap.com/docs/5.1/utilities/background/)
 
-![image-20220105201031790](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105201031790.png)
+![image-20220105201031790](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105201031790.png)
 
 ```html
 <!DOCTYPE html>
@@ -667,7 +667,7 @@ padding不可以使用负值，margin需要手动启动
 
 ### [溢出](https://getbootstrap.com/docs/5.1/utilities/overflow/)
 
-![image-20220105202129348](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105202129348.png)
+![image-20220105202129348](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105202129348.png)
 
 ```html
 <!DOCTYPE html>
@@ -711,7 +711,7 @@ padding不可以使用负值，margin需要手动启动
 
 ### [卡片组件](https://getbootstrap.com/docs/5.1/components/card)
 
-![image-20220104230602502](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220104230602502.png)
+![image-20220104230602502](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220104230602502.png)
 
 ```html
 <!DOCTYPE html>
@@ -824,7 +824,7 @@ padding不可以使用负值，margin需要手动启动
 
 栏数过多示例：
 
-![image-20220104231216826](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220104231216826.png)
+![image-20220104231216826](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220104231216826.png)
 
 ```html
 <!DOCTYPE html>
@@ -905,7 +905,7 @@ padding不可以使用负值，margin需要手动启动
 
 h-100用来控制每个栏长度一致
 
-![image-20220104233541253](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220104233541253.png)
+![image-20220104233541253](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220104233541253.png)
 
 ```html
 <!DOCTYPE html>
@@ -1000,7 +1000,7 @@ list-group-item-action	鼠标移到按钮后，白色背景变灰色背景
 
 用来移除容器外围的圆角和边框
 
-![image-20220104234920436](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220104234920436.png)
+![image-20220104234920436](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220104234920436.png)
 
 ```html
 <ul class="list-group list-group-flush">
@@ -1058,7 +1058,7 @@ list-group-item-action	鼠标移到按钮后，白色背景变灰色背景
 
 flush与卡片结合
 
-![image-20220105000209925](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105000209925.png)
+![image-20220105000209925](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105000209925.png)
 
 ```html
     <div class="container">
@@ -1133,7 +1133,7 @@ flush与卡片结合
 
 ### [面包屑(breadcrumb)](https://getbootstrap.com/docs/5.1/components/breadcrumb/)
 
-![image-20220105033910231](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105033910231.png)
+![image-20220105033910231](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105033910231.png)
 
 ```html
 <!DOCTYPE html>
@@ -1180,7 +1180,7 @@ flush与卡片结合
 
 ### [分页(pagination)](https://getbootstrap.com/docs/5.1/components/pagination/)
 
-![image-20220105040727321](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105040727321.png)
+![image-20220105040727321](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105040727321.png)
 
 ```html
 <!DOCTYPE html>
@@ -1395,7 +1395,7 @@ flush与卡片结合
 
 一个页面想要同时存在多组轮播图，每一组轮播图里如：`data-bs-target="#carouselExampleCaptions"`，#carouselExampleCaptions都必须要不一样
 
-![image-20220105060900115](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105060900115.png)
+![image-20220105060900115](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105060900115.png)
 
 ```html
 <!DOCTYPE html>
@@ -1469,7 +1469,7 @@ flush与卡片结合
 | `.modal-fullscreen-xl-down`  | Below `1200px` |
 | `.modal-fullscreen-xxl-down` | Below `1400px` |
 
-![image-20220105064530593](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105064530593.png)
+![image-20220105064530593](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105064530593.png)
 
 ```html
 <!DOCTYPE html>
@@ -1596,7 +1596,7 @@ flush与卡片结合
 
 指定提示框显示方向`data-bs-placement='right'`(注意，如果空间不足，提示框会自动显示在空余的地方)
 
-![image-20220105070826285](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105070826285.png)
+![image-20220105070826285](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105070826285.png)
 
 ### [Popovers](https://getbootstrap.com/docs/5.1/components/popovers/)
 
@@ -1613,7 +1613,7 @@ flush与卡片结合
 
 指定提示框显示方向`data-bs-placement='right'`(注意，如果空间不足，提示框会自动显示在空余的地方)
 
-![image-20220105071010616](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105071010616.png)
+![image-20220105071010616](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105071010616.png)
 
 ```html
 <!DOCTYPE html>
@@ -1663,7 +1663,7 @@ flush与卡片结合
 
 手风琴除了修改`data-bs-target`,还要修改`data-bs-parent`
 
-![image-20220105195442475](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220105195442475.png)
+![image-20220105195442475](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220105195442475.png)
 
 ```html
 <!DOCTYPE html>
@@ -1825,7 +1825,7 @@ flush与卡片结合
 </html>
 ```
 
-![image-20220106020612036](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220106020612036.png)
+![image-20220106020612036](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220106020612036.png)
 
 ```html
 <!DOCTYPE html>
@@ -1859,11 +1859,11 @@ flush与卡片结合
 </html>
 ```
 
-![image-20220106022300476](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220106022300476.png)
+![image-20220106022300476](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220106022300476.png)
 
 ### [input group](https://getbootstrap.com/docs/5.1/forms/input-group/)
 
-![image-20220106024037865](C:\Users\simon\OneDrive\Typroa\bootstrap5\bootstrap5.assets\image-20220106024037865.png)
+![image-20220106024037865](bootstrap5%E7%AC%94%E8%AE%B0.assets/image-20220106024037865.png)
 
 ```html
 <!DOCTYPE html>

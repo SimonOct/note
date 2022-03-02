@@ -2,7 +2,7 @@
 
 ## css的基础语法和注释
 
-![image-20211222021824832](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211222021824832.png)
+![image-20211222021824832](css%E7%AC%94%E8%AE%B0.assets/image-20211222021824832.png)
 
 ```html
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
 </html>
 ```
 
-![image-20211222022826755](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211222022826755.png)
+![image-20211222022826755](css%E7%AC%94%E8%AE%B0.assets/image-20211222022826755.png)
 
 ## css的使用
 
@@ -79,7 +79,7 @@
 </html>
 ```
 
-![image-20211222024317851](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211222024317851.png)
+![image-20211222024317851](css%E7%AC%94%E8%AE%B0.assets/image-20211222024317851.png)
 
 ## 选择器
 
@@ -165,7 +165,7 @@
 </html>
 ```
 
-![image-20211222030443693](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211222030443693.png)
+![image-20211222030443693](css%E7%AC%94%E8%AE%B0.assets/image-20211222030443693.png)
 
 ### 组合选择器
 
@@ -269,7 +269,7 @@
 </html>
 ```
 
-![image-20211223172653502](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223172653502.png)
+![image-20211223172653502](css%E7%AC%94%E8%AE%B0.assets/image-20211223172653502.png)
 
 ## css常用属性
 
@@ -303,7 +303,7 @@
 </html>
 ```
 
-![image-20211223173904011](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223173904011.png)
+![image-20211223173904011](css%E7%AC%94%E8%AE%B0.assets/image-20211223173904011.png)
 
 ### 文本
 
@@ -358,7 +358,7 @@
 </html>
 ```
 
-![image-20211223175409432](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223175409432.png)
+![image-20211223175409432](css%E7%AC%94%E8%AE%B0.assets/image-20211223175409432.png)
 
 ### 字体
 
@@ -404,7 +404,7 @@
 </html>
 ```
 
-![image-20211223180415315](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223180415315.png)
+![image-20211223180415315](css%E7%AC%94%E8%AE%B0.assets/image-20211223180415315.png)
 
 ### 对齐方式
 
@@ -438,7 +438,7 @@
 </html>
 ```
 
-![image-20211223180929722](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223180929722.png)
+![image-20211223180929722](css%E7%AC%94%E8%AE%B0.assets/image-20211223180929722.png)
 
 ### display
 
@@ -526,7 +526,7 @@
 </html>
 ```
 
-![image-20211223182536593](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223182536593.png)
+![image-20211223182536593](css%E7%AC%94%E8%AE%B0.assets/image-20211223182536593.png)
 
 ### 浮动
 
@@ -575,7 +575,7 @@
 </html>
 ```
 
-![image-20211223210946065](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223210946065.png)
+![image-20211223210946065](css%E7%AC%94%E8%AE%B0.assets/image-20211223210946065.png)
 
 ### 盒子模型
 
@@ -644,7 +644,7 @@
 </html>
 ```
 
-![image-20211223212701809](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223212701809.png)
+![image-20211223212701809](css%E7%AC%94%E8%AE%B0.assets/image-20211223212701809.png)
 
 #### padding
 
@@ -682,7 +682,7 @@
 </html>
 ```
 
-![image-20211223215240632](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223215240632.png)
+![image-20211223215240632](css%E7%AC%94%E8%AE%B0.assets/image-20211223215240632.png)
 
 #### margin
 
@@ -711,4 +711,4 @@
 </html>
 ```
 
-![image-20211223215852583](C:\Users\simon\OneDrive\Typroa\CSS\css.assets\image-20211223215852583.png)
+![image-20211223215852583](css%E7%AC%94%E8%AE%B0.assets/image-20211223215852583.png)
