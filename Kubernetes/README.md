@@ -1,0 +1,3 @@
+名为Kubernetes的文件是别人的笔记
+
+Kubernetes-note是我自己的笔记，是对别人笔记的补充
