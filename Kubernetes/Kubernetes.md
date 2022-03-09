@@ -737,14 +737,14 @@ kubectl get pod,svc
 
 YAML是一个类似 XML、JSON 的标记性语言。它强调以**数据**为中心，并不是以标识语言为重点。因而YAML本身的定义比较简单，号称"一种人性化的数据格式语言"。
 
-```
+```xml
 <heima>
     <age>15</age>
     <address>Beijing</address>
 </heima>
 ```
 
-```
+```yaml
 heima:
   age: 15
   address: Beijing
@@ -764,7 +764,7 @@ YAML支持以下几种数据类型：
 - 对象：键值对的集合，又称为映射（mapping）/ 哈希（hash） / 字典（dictionary）
 - 数组：一组按次序排列的值，又称为序列（sequence） / 列表（list）
 
-```
+```yaml
 # 纯量, 就是指的一个简单的值，字符串、布尔值、整数、浮点数、Null、时间、日期
 # 1 布尔类型
 c1: true (或者True)
@@ -784,7 +784,7 @@ c8: line1
     line2     # 字符串过多的情况可以拆成多行，每一行会被转化成一个空格
 ```
 
-```
+```yaml
 # 对象
 # 形式一(推荐):
 heima:
@@ -794,7 +794,7 @@ heima:
 heima: {age: 15,address: Beijing}
 ```
 
-```
+```yaml
 # 数组
 # 形式一(推荐):
 address:
@@ -867,7 +867,7 @@ kubectl get pod pod_name -o yaml
 
 kubernetes中所有的内容都抽象为资源，可以通过下面的命令进行查看:
 
-```
+```bash
 kubectl api-resources
 ```
 
@@ -898,7 +898,7 @@ kubectl api-resources
 
 kubernetes允许对资源进行多种操作，可以通过--help查看详细的操作命令
 
-```
+```bash
 kubectl --help
 ```
 
@@ -989,7 +989,7 @@ spec:
 
 2）执行create命令，创建资源：
 
-```yaml
+```bash
 [root@master ~]# kubectl create -f nginxpod.yaml
 namespace/dev created
 pod/nginxpod created
@@ -1020,7 +1020,7 @@ pod "nginxpod" deleted
 
 此时发现两个资源对象被删除了
 
-```
+```markdown
 总结:
     命令式对象配置的方式操作资源，可以简单的认为：命令  +  yaml配置文件（里面是命令需要的各种参数）
 ```
@@ -1041,7 +1041,7 @@ namespace/dev unchanged
 pod/nginxpod unchanged
 ```
 
-```
+```markdown
 总结:
     其实声明式对象配置就是使用apply描述一个资源最终的状态（在yaml中定义状态）
     使用apply操作资源：
@@ -1054,7 +1054,7 @@ pod/nginxpod unchanged
 kubectl的运行是需要进行配置的，它的配置文件是$HOME/.kube，如果想要在node节点运行此命令，需要将master上的.kube文件复制到node节点上，即在master节点上执行下面操作：
 
 ```shell
-scp  -r  HOME/.kube   node1: HOME/
+scp  -r  ~/.kube   node1: ~/
 ```
 
 > 使用推荐: 三种方式应该怎么用 ?
