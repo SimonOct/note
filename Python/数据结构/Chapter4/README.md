@@ -102,6 +102,34 @@ The array’s capacity is 14/0.70, or 20.
 
 ### 什么是二维数组（网格）
 
-
+二维数组是一种数据结构，将数据组织在行和列中。每个元素都可以使用两个下标来访问或替换，下标指定了元素的行和列，可以随机访问。
 
 A two dimensional array is a data structure that organizes data in rows and columns. Each item can be accessed or replaced with random access using two subscripts, which specify the row and column of the item.
+
+### 请描述一个可能会用到二维数组的应用程序
+
+一个二维数组可能被用来表示游戏程序中的棋盘。
+
+A two-dimensional array might be used to represent a checkerboard in a game-playing program.
+
+# 4.5 单项链接结构上的操作
+
+## 练习题
+
+### 假设已经找到了从单向链接结构里删除元素的位置，请说明从这个时候开始完成删除操作的运行时复杂度
+
+在元素被定位后，从单链结构中删除一个元素的运行时间复杂度为O(1)。
+
+The run-time complexity for removing an item from a singly linked structure after that item has been located is O(1).
+
+### 可以对单向链接结构里按顺序排序的元素执行二分搜索吗？如果不可以，为什么
+
+在一个单链结构上对一个元素进行二分搜索是不现实的。定位中点的运行时间成本将是线性的，所以这种搜索的运行时间将比顺序搜索的运行时间更差。
+
+It is not practical to perform a binary search for an item on a singly linked structure. The runtime cost of locating the midpoint would be linear, so the running time of such a search would be worse than that of a sequential search.
+
+### 请说明为什么Python列表会使用数组而不是链接结构来保存它的元素
+
+Python list 使用数组而不是链接结构来保存它的元素，因为访问和替换操作的运行时间是 O(1)，而且当数组的一半以上的位置被占用时，内存的使用效果更好。
+
+A Python list uses an array rather than a linked structure to hold its items because the running times of the access and replacement operations are O(1), and the memory usage is better when more than half of the array’s positions are occupied.
