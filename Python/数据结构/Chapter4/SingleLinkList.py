@@ -14,7 +14,7 @@ class SingleLinkList(object):
             head_node = Node(node)
             self.__head = head_node
 
-    def is_empty(self) -> bool:
+    def isEmpty(self) -> bool:
         return self.__head is None
 
     def length(self) -> int:
@@ -26,7 +26,7 @@ class SingleLinkList(object):
             current = current.next
         return int(count)
 
-    def travel(self):
+    def traversal(self):
         current = self.__head
         while current is not None:
             print(current.data, end=" ")
@@ -47,7 +47,7 @@ class SingleLinkList(object):
         node = Node(item)
         current = self.__head
         # 如果链表为空,直接追加
-        if self.is_empty():
+        if self.isEmpty():
             self.__head = node
         else:
             # 将cur指向最后的节点,然后将其next指向node
@@ -102,11 +102,11 @@ class SingleLinkList(object):
 
 if __name__ == "__main__":
     lyst = SingleLinkList()
-    print(lyst.is_empty())
+    print(lyst.isEmpty())
     print(lyst.length())
 
     lyst.append(1)
-    print(lyst.is_empty())
+    print(lyst.isEmpty())
     print(lyst.length())
 
     lyst.append(2)
@@ -114,13 +114,13 @@ if __name__ == "__main__":
     lyst.append(4)
     lyst.append(5)
     lyst.append(6)
-    lyst.travel()
+    lyst.traversal()
 
     lyst.insert(5, 400)
-    lyst.travel()
+    lyst.traversal()
 
     lyst.remove(400)
-    lyst.travel()
+    lyst.traversal()
 
     lyst.remove(1)
-    lyst.travel()
+    lyst.traversal()
