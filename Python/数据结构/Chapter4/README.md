@@ -133,3 +133,19 @@ It is not practical to perform a binary search for an item on a singly linked st
 Python list 使用数组而不是链接结构来保存它的元素，因为访问和替换操作的运行时间是 O(1)，而且当数组的一半以上的位置被占用时，内存的使用效果更好。
 
 A Python list uses an array rather than a linked structure to hold its items because the running times of the access and replacement operations are O(1), and the memory usage is better when more than half of the array’s positions are occupied.
+
+# 4.6 链接上的变化
+
+## 练习题
+
+### 包含虚拟头节点的环状链接结构给程序员带来了什么好处
+
+一个带有虚拟头节点的循环链接结构使程序员能够避免在代码中插入或删除结构头部和尾部的元素的特殊情况。
+
+A circular linked structure with a dummy header node enables the programmer to avoid special cases in the code for inserting or removing items at the head and tail of the structure.
+
+### 和单向链接结构相比，请描述双向链接结构的一个好处和一个额外开销
+
+双链结构的一个好处是，移动到前一个项目的操作在恒定的时间内运行。一个代价是，每个节点的第二个链接需要一个额外的存储单元。
+
+One benefit of a doubly linked structure is that the operation to move to a previous item runs in constant time. One cost is that an extra memory cell is required for the second link in each node.
