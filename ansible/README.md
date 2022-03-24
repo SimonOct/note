@@ -336,3 +336,232 @@ mode：设置解压缩后的文件权限
 ansible websrvs -m archive -a 'path=/var/log/ dest=/data/log.tar.bz2 format=bz2 owner=simon mode=0600'
 ```
 
+### hosotname
+
+管理主机名
+
+```bash
+simon@DESKTOP-KFFEQ8I:~$ ansible 192.168.109.153 -m hostname -a 'name=node3.simon'
+192.168.109.153 | CHANGED => {
+    "ansible_facts": {
+        "ansible_domain": "simon",
+        "ansible_fqdn": "node3.simon",
+        "ansible_hostname": "node3",
+        "ansible_nodename": "node3.simon",
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "name": "node3.simon"
+}
+simon@DESKTOP-KFFEQ8I:~$ ansible 192.168.109.153 -m shell -a "hostname"
+192.168.109.153 | CHANGED | rc=0 >>
+node3.simon
+```
+
+### cron
+
+计划任务
+
+支持时间：minute, hour, day, month, weekday
+
+```bash
+# 创建任务
+ansible dbsrvs -m cron -a "hour=2 minute=30 weekday=1-5 name='backup mysql' job=/root/mysql_backup.sh"
+ansible srv -m cron -a "minute=*/5 job='/usr/sbin/ntpdate 172.20.0.1 &> /dev/null' name=Synctime"
+# 禁用计划任务
+ansible srv -m cron -a "minute=*/5 job='/usr/sbin/ntpdate 172.20.0.1 &> /dev/null' name=Synctime disabled=yes"
+# 启用计划任务
+ansible srv -m cron -a "minute=*/5 job='/usr/sbin/ntpdate 172.20.0.1 &> /dev/null' name=Synctime disabled=no"
+# 删除任务
+ansible srv -m cron -a "name='backup mysql' state=absent"
+ansible srv -m cron -a 'state=absent name=Synctime'
+```
+
+### yum
+
+管理软件包，只支持RHEL, CentOS, Fedora
+
+```bash
+# 安装软件，不添加state的话默认就是安装
+ansible websrvs -m yum -a "name=httpd"
+ansible websrvs -m yum -a "name=httpd state=present"
+# 卸载软件
+ansible websrvs -m yum -a "name=httpd state=absent"
+```
+
+### service
+
+管理服务
+
+```bash
+ansible websrvs -m service -a "name=httpd state=started enabled=yes"
+ansible websrvs -m service -a "name=httpd state=stopped"
+ansible websrvs -m service -a "name=httpd state=reloaded"
+ansible websrvs -m service -a "name=httpd state=restarted"
+```
+
+### user
+
+管理用户
+
+```bash
+# 创建用户
+ansible srv -m user -a 'name=user1 comment="test user" uid=2048 home=/app/user1 group=root'
+
+ansible srv -m user -a 'name=nginx comment=nginx uid=88 group=nginx groups="root,daemon" shell=/sbin/nologin system=yes create_home=no home=/data/nginx non_unique=yes'
+
+# 删除用户及家目录等数据
+ansible srv -m user  -a 'name=nginx state=absent remove=yes'
+```
+
+### group
+
+管理组
+
+```bash
+# 创建组
+ansible websrvs -m group -a 'name=nginx gid=88 system=yes'
+# 删除组
+ansible websrvs -m group -a 'name=nginx state=absent'
+```
+
+### lineinfile
+
+ansible在使用sed进行替换时，经常会遇到需要转义的问题，而且ansible在遇到特殊符号进行替换时，存在问题，无法正常进行替换。其实在ansible字体提供了两个模块：lineinfile和replace，可以方便的进行替换
+
+```bash
+ansible all -m lineinfile -a "path=/etc/selinux/config regexp='^SELINUX=' line='SELINUX=enforcing'"
+ansible all -m lineinfile -a 'dest=tec/fstab state=absent regexp="^#"'
+```
+
+### replace
+
+```bash
+ansible all -m replace -a "path=/etc/fstab regexp='^(UUID.*)' replace='#\1'"
+ansible all -m replace -a "path=/etc/fstab regexp='^#(.*)' replace='\1'"
+```
+
+### setup
+
+收集主机的系统信息，这些facts信息可以直接以变量的形式使用，但是如果主机较多，会影响执行速度，可以使用`gather_facts: no`来禁止ansible手机facts信息
+
+```bash
+ansible srv -m setup
+ansible srv -m setup -a "filter=ansible_nodename"
+ansible srv -m setup -a "filter=ansible_hostname"
+ansible srv -m setup -a "filter=ansible_domain"
+ansible srv -m setup -a "filter=ansible_memtotal_mb"
+ansible srv -m setup -a "filter=ansible_memory_mb"
+ansible srv -m setup -a "filter=ansible_memfree_mb"
+ansible srv -m setup -a "filter=ansible_os_family"
+ansible srv -m setup -a "filter=ansible_distribution_major_version"
+ansible srv -m setup -a "filter=ansible_distribution_version"
+ansible srv -m setup -a "filter=ansible_processor_vcpus"
+ansible srv -m setup -a "filter=ansible_all_ipv4_addresses"
+ansible srv -m setup -a "filter=ansible_architecture"
+```
+
+# playbook
+
+## YAML介绍
+
+```markdown
+YAML是一个可读性高的用来表达资料序列的格式。
+    YAML参考了其他多种语言，包括：XML、C语言、Python、Perl以及电子邮件格式RFC2822等。
+    Clark Evans在2001年在首次发表了这种语言，另外Ingy döt Net与Oren Ben-Kiki也是这语言的共同设计者
+
+YAML Ain't Markup Language，即YAML不是XML。
+不过，在开发的这种语言时，YAML的意思其实是："Yet Another Markup Language"（仍是一种标记语言）
+
+特性
+    YAML的可读性好
+    YAML和脚本语言的交互性好
+    YAML使用实现语言的数据类型
+    YAML有一个一致的信息模型
+    YAML易于实现
+    YAML可以基于流来处理
+    YAML表达能力强，扩展性好
+
+更多的内容及规范参见：http://www.yaml.org
+```
+
+### YAML语法简介
+
+```markdown
+> 在单一档案中，可用连续三个连字号(——)区分多个档案。
+  另外，还有选择性的连续三个点号( ... )用来表示档案结尾
+> 次行开始正常写Playbook的内容，一般建议写明该Playbook的功能
+> 使用#号注释代码
+> 缩进必须是统一的，不能空格和tab混用
+> 缩进的级别也必须是一致的，同样的缩进代表同样的级别，程序判别配置的级别是通过缩进结合换行来实现的
+> YAML文件内容是区别大小写的，k/v的值均需大小写敏感
+> 多个k/v可同行写也可换行写，同行使用:分隔
+> v可是个字符串，也可是另一个列表[]
+> 一个完整的代码块功能需最少元素需包括 name 和 task
+> 一个name只能包括一个task
+> YAML文件扩展名通常为yml或yaml
+```
+
+### YAML语法
+
+```yaml
+List：列表，其所有元素均使用“-”打头
+      列表代表同一类型的元素
+示例：
+# A list of tasty fruits
+- Apple
+- Orange
+- Strawberry
+- Mango
+
+Dictionary：字典，通常由多个key与value构成 键值对
+示例：
+---
+# An employee record
+name: Example Developer
+job: Developer
+skill: Elite
+
+也可以将key:value放置于{}中进行表示，用,分隔多个key:value
+示例：
+---
+# An employee record
+{name: Example Developer, job: Developer, skill: Elite}  有空格
+```
+
+### 三种常见的数据交换格式
+
+```xml
+<Servers>
+    <Server>
+        <name>Server1</name>
+        <owner>John</owner>
+        <created>123456</created>
+        <status>active</status>
+    </Server>
+</Servers>
+```
+
+```json
+{
+  "Servers": {
+    "Server": {
+      "name": "Server1",
+      "owner": "John",
+      "created": "123456",
+      "status": "active"
+    }
+  }
+}
+```
+
+```yaml
+---
+Servers:
+  Server:
+    name: Server1
+    owner: John
+    created: '123456'
+    status: active
+```
+
