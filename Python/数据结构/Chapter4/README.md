@@ -149,3 +149,13 @@ A circular linked structure with a dummy header node enables the programmer to a
 双链结构的一个好处是，移动到前一个项目的操作在恒定的时间内运行。一个代价是，每个节点的第二个链接需要一个额外的存储单元。
 
 One benefit of a doubly linked structure is that the operation to move to a previous item runs in constant time. One cost is that an extra memory cell is required for the second link in each node.
+
+# 总结
+
+- 数据结构是一个表示多项集里所包含数据的对象
+- 数组是一种在常数时间内支持对位置逐项随机访问的数据结构。在创建数组时，会为它分配若干个用来存放数据的内存空间，并且数组的长度会保持不变。插入和删除操作需要移动数据元素，并且可能需要创建一个新的、更大或更小的数组
+- 二维数组里的每个数据值都位于矩形网格的行和列上
+- 链接结构是由0个或多个节点组成的数据结构。每个节点都包含一个数据结构和一个或多个指向其它节点的链接
+- 单向链接结构的节点包含数据元素和到下一个节点的链接。双向链接结构里的节点还包含到前一个节点的链接
+- 在链接结构里进行插入或删除操作不需要移动数据元素每次最多只会创建一个节点。但是，在链接结构里执行插入、删除和访问操作需要的时间复杂度都是线性的
+- 在链接结构里使用头节点可以简化某些操作，如添加或删除元素
