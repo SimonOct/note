@@ -317,6 +317,7 @@ git config --global commit.gpgsign true
 
 ```bash
 curl https://github.com/web-flow.gpg | gpg --import
+gpg --sign-key 4AEE18F83AFDEB23
 ```
 
 导出密钥，将sec那行最长的字符串复制后执行export-secret-key
