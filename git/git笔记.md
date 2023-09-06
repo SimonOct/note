@@ -284,3 +284,51 @@ n表示后退几步
 - 初始化本地库
 
 ![image-20220126162151346](git%E7%AC%94%E8%AE%B0.assets/image-20220126162151346.png)
+
+## 配置gpg
+
+windows上安装git后直接可以z在git bash执行
+
+```bash
+gpg --full-generate-key
+```
+
+生成gpg密钥，在安装git后已经顺带安装好gpg
+
+查看密钥信息
+
+```bash
+gpg --list-secret-keys --keyid-format LONG
+```
+
+根据密钥ID（sec那行）导出公钥，将信息完整复制后可以贴到github、gitlab等托管平台账号内的GPG处，2XXXXXXXXXXXXXX3是我的密钥id，不同密钥ID不相同
+
+```bash
+gpg --armor --export 2XXXXXXXXXXXXXX3
+```
+
+启动全局签名
+
+```bash
+git config --global commit.gpgsign true
+```
+
+导入github的gpg(可选，这步是为了在github端编辑commit后，在本地pull时看记录能显示已验证，其它平台的密钥自行搜寻)
+
+```bash
+curl https://github.com/web-flow.gpg | gpg --import
+```
+
+导出密钥，将sec那行最长的字符串复制后执行export-secret-key
+
+```bash
+gpg --list-secret-keys --keyid-format LONG
+gpg --export-secret-key AXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX3 > simon.asc
+```
+
+导入密钥
+
+```bash
+gpg --import simon.asc
+```
+
