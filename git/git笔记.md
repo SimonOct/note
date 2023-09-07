@@ -333,3 +333,9 @@ gpg --export-secret-key AXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX3 > simon.asc
 gpg --import simon.asc
 ```
 
+让Git知道签名所用的GPG密钥ID
+
+```bash
+git config --global user.signingkey {key_id}
+```
+
