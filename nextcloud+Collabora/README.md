@@ -8,9 +8,9 @@
 
 ## 版本说明
 
-onlyoffice参考下面的docker方法安装写说明时最新版本是version 7.2。
-mariadb版本为10.11.5。
-Nextcloud Hub 5 (27.0.2)。
+- onlyoffice版本参考下面的docker方法安装写说明时最新版本是version 7.2
+- mariadb版本为10.11.5
+- Nextcloud Hub 5 (27.0.2)
 
 
 
@@ -195,7 +195,7 @@ chmod 700 /etc/ssl/private/nextcloud.key
 apache2ctl -t
 
 # 启用虚拟主机配置文件
-a2ensite nextcloud.conf
+a2ensite /etc/apache2/sites-available/nextcloud.conf
 
 # 重启apache2
 systemctl restart apache2.service
