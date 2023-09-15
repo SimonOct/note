@@ -1,6 +1,8 @@
 # 在Debian12上安装Nextcloud为局域网用户提供服务
 
-本次 Nextcloud 的安装方法参考 [LinuxStory](https://zhuanlan.zhihu.com/p/651099247)。当然，也可以通过 Docker 进行安装，但我并不推荐这种方式。使用 Docker 安装 Nextcloud 的使用体验会比较差，例如进入设置页面或添加用户时可能需要很长时间等待。
+本次 Nextcloud 的安装方法参考 [LinuxStory](https://zhuanlan.zhihu.com/p/651099247)。
+
+也可以通过 Docker 进行安装，但我并不推荐这种方式。使用 Docker 安装 Nextcloud 的使用体验会比较差，例如进入设置页面或添加用户时可能需要很长时间等待。
 
 请注意，本笔记中的所有命令都是以 root 账号执行的。如果你使用非 root 用户，请确保在命令前添加`sudo`。
 
@@ -11,6 +13,23 @@
 - onlyoffice版本参考下面的docker方法安装写说明时最新版本是version 7.2
 - mariadb版本为10.11.5
 - Nextcloud Hub 5 (27.0.2)
+
+系统的一些简要信息
+
+```bash
+root@nextcloud:~# uname -a
+Linux nextcloud 6.1.0-11-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.38-4 (2023-08-08) x86_64 GNU/Linux
+root@nextcloud:~# cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+```
 
 
 
@@ -130,7 +149,7 @@ chmod -R 755 /var/www/html/nextcloud/
 
 使用浏览器访问 http://your_domain_or_IP_address/nextcloud，并创建 NextCloud 管理员账户，包括用户名和密码。接下来，你需要填写用于存储数据的 NextCloud 数据库的详细信息，具体信息为安装Mariadb时创建的数据库名称、nextcloud账号与密码。
 
-填写无误后按 install按钮进行安装。
+填写无误后按 install 按钮进行安装。
 
 安装完成后会转到Recommened apps页面，可以选择Skip跳过，或者按Install Recommended apps安装推荐应用。
 
@@ -393,7 +412,7 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /va
 
 ### 安装Nextcloud
 
-请注意，你需要替换相关数据库信息或修改映射的位置。在本次演示中，我们将使用 PostgreSQL。
+请注意，你需要替换相关数据库信息或修改映射的位置。在本次演示中，我将使用 PostgreSQL（省略了psql创建数据库和用户的步骤，请自行操作）。
 
 172.17.0.3 是指 PostgreSQL Docker 容器的地址（动态）。我尝试过将其更改为 'localhost' 或本机地址，但都无法成功建立连接。
 
