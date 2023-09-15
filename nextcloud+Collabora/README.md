@@ -203,6 +203,54 @@ systemctl restart apache2.service
 
 
 
+### 修改php内存限制
+
+Nextcloud推荐512M，可以适当给大点
+
+```bash
+# 修改php文件
+nano /etc/php/8.2/apache2/php.ini
+
+--------------
+memory_limit = 512M
+--------------
+
+# 重启apache2
+systemctl restart apache2.service
+```
+
+
+
+### **修改后台任务方式为Cron**
+
+网页端
+
+1. 登录到Nextcloud网页端，在打开应用管理界面
+2. 点击管理设置，在左侧管理一栏找到基本设置后，点击
+3. 选择Cron方式
+
+服务端
+
+注意/var/www/nextcloud/cron.php路径，如果是自定义的话，请改修改为`Nextcloud所在文件夹/cron.php`
+
+```bash
+# 使用www-data身份编辑crontab，添加下面的语句后保存退出
+crontab -u www-data -e
+
+--------------
+*/5  *  *  *  * php -f /var/www/nextcloud/cron.php
+--------------
+
+# 验证是否添加
+crontab -u www-data -l
+# 类似返回
+[snip]
+*/5  *  *  *  * php -f /var/www/nextcloud/cron.php
+
+```
+
+
+
 ## 安装app
 
 线上安装的话直接在网页端的应用内点击安装即可，下面介绍是安装包安装。
@@ -262,7 +310,7 @@ docker exec -it onlyoffice ./usr/bin/documentserver-generate-allfonts.sh
 
 #### 配置onlyoffice连接器
 
-1. 登录到Nextcloud网页端，在打开应用管理界面，
+1. 登录到Nextcloud网页端，在打开应用管理界面
 2. 在“您的应用”寻找到onlyoffice后，启用
 3. 点击管理设置，在左侧管理一栏找到onlyoffice后，点击
 4. 输入ONLYOFFICE Docs地址，地址为`onlyoffice服务端IP地址:9000`
@@ -295,7 +343,7 @@ chown -R www-data:www-data /var/www/html/nextcloud/apps/richdocuments
 
 #### 配置
 
-1. 登录到Nextcloud网页端，在打开应用管理界面，
+1. 登录到Nextcloud网页端，在打开应用管理界面
 2. 在“您的应用”寻找到Collabora Online - Built-in CODE Server、Nextcloud Office后，启用
 3. 点击管理设置，在左侧管理一栏找到Nextcloud Office（或Office）后，点击
 4. 点击使用内建的 CODE - Collabora Online 开发版
