@@ -166,13 +166,13 @@ chmod -R 755 /var/www/html/nextcloud/
 a2enmod ssl
 
 # 2048 位的 RSA 密钥
-openssl genrsa -out onlyoffice.key 2048
+openssl genrsa -out nextcloud.key 2048
 
-# 创建一个 CSR 文件 (onlyoffice.csr)，其中包含了公钥以及与证书请求相关的信息，例如组织信息、域名等。
-openssl req -new -key onlyoffice.key -out onlyoffice.csr
+# 创建一个 CSR 文件 (nextcloud.csr)，其中包含了公钥以及与证书请求相关的信息，例如组织信息、域名等。
+openssl req -new -key nextcloud.key -out nextcloud.csr
 
-# 使用 CSR 和私钥来生成一个自签名的数字证书 (onlyoffice.crt)，有效期为1095天（三年）
-openssl x509 -req -days 1095 -in onlyoffice.csr -signkey onlyoffice.key -out onlyoffice.crt
+# 使用 CSR 和私钥来生成一个自签名的数字证书 (nextcloud.crt)，有效期为1095天（三年）
+openssl x509 -req -days 1095 -in nextcloud.csr -signkey nextcloud.key -out nextcloud.crt
 
 # 修改/etc/apache2/sites-available/nextcloud.conf配置，在尾部添加443相关信息
 nano /etc/apache2/sites-available/nextcloud.conf
